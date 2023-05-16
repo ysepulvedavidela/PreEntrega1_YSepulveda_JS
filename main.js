@@ -1,69 +1,87 @@
-alert("**                   Bienvenido al simulador de crédito                   **");
+// Declaración de variables y objetos
+let carrito = [];
+let productos = [
+    { nombre: "Videojuego", precio: 15 },
+    { nombre: "Mando", precio: 40 },
+    { nombre: "Funko pop", precio: 10 },
+    { nombre: "Mouse", precio: 20 },
+    { nombre: "Teclado", precio: 15 }
+];
 
-// esta es la funcion que calcula el valor de la cuota, en relacion al monto que se pidio, con los meses pedidos y una tasa de interes del 1.3 //
-function calcularCuota(monto, cuota, interes) {
+// Función para realizar una compra
+function realizarCompra() {
+    let finalizar = false;
+    let total = 0;
 
-    let resultado = (monto / cuota)* interes;
-    let montoPagar = monto * interes;
-        
-    alert("El monto solicitado es de: $" + monto + " CLP." + " El valor se ha simulado en " + cuota + " cuotas de: $" + resultado.toFixed(1) +" CLP. El costo total del credito es de $" + montoPagar + " CLP.");
+    while (!finalizar) {
+        // Captura entradas del usuario
+        let producto = prompt("Ingresa el nombre del producto que deseas comprar (o escribe 'fin' para terminar):");
+
+        if (producto.toLowerCase() === "fin") {
+            finalizar = true;
+            continue;
+        }
+
+        // Valida si se ingresó un producto válido
+        let productoEncontrado = productos.find(function(item) {
+            return item.nombre.toLowerCase() === producto.toLowerCase();
+        });
+
+        if (productoEncontrado) {
+            let cantidad;
+            let cantidadValida = false;
+
+            while (!cantidadValida) {
+                cantidad = parseInt(prompt("Ingresa la cantidad que deseas comprar:"));
+
+                // Valida si se ingresó una cantidad válida
+                if (!isNaN(cantidad) && cantidad > 0) {
+                    cantidadValida = true;
+                } else {
+                    // Muestra mensaje de error si no se ingresó una cantidad válida
+                    alert("Error: Debes ingresar una cantidad válida.");
+                }
+            }
+
+            // Agrega el producto al carrito
+            carrito.push({
+                producto: productoEncontrado.nombre,
+                precioUnitario: productoEncontrado.precio,
+                cantidad: cantidad
+            });
+
+            // Calcula el subtotal y lo suma  al total
+            let subtotal = productoEncontrado.precio * cantidad;
+            total += subtotal;
+
+            // Muestra mensaje de éxito
+            let mensajeExito = "Producto agregado al carrito:\n";
+            mensajeExito += "Producto: " + productoEncontrado.nombre + "\n";
+            mensajeExito += "Cantidad: " + cantidad;
+            alert(mensajeExito);
+        } else {
+            // Muestra mensaje de error si no se ingresó un producto válido
+            alert("Error: Producto no válido.");
+        }
+    }
+
+    // Muestra el resumen de la compra y el total
+    if (carrito.length > 0) {
+        let mensajeResumen = "Resumen de la compra:\n";
+
+        for (let i = 0; i < carrito.length; i++) {
+            let item = carrito[i];
+            let subtotal = item.precioUnitario * item.cantidad;
+
+            mensajeResumen += "Producto: " + item.producto + "\n";
+            mensajeResumen += "Cantidad: " + item.cantidad + "\n";
+            mensajeResumen += "Subtotal: $" + subtotal + "\n";
+            mensajeResumen += "----------------------\n";
+        }
+
+        mensajeResumen += "Total: $" + total;
+        alert(mensajeResumen);
+    } else {
+        alert("No se realizaron compras.");
+    }
 }
-
-let monto;
-
-do {
-    monto = Number(prompt("Ingresar el monto a simular (monto mínimo de $100.000 CLP)."));
-    if (Number.isNaN(monto) || monto < 100000) {
-        alert("El monto ingresado no es correcto o es inferior a $100.000 CLP.");
-    }
-} while (Number.isNaN(monto) || monto < 100000);
-
-let cuota;
-
-do{
-
-    cuota = Number(prompt("Ingresar el número de cuotas (3 a 12 cuotas)."));
-
-    switch (cuota) {
-
-        case 1:
-        case 2:
-            alert("La cantidad de cuotas ingresadas es menor a la requerida.");
-            break;
-            
-        case 3:
-        case 4:
-        case 5:{
-            let interes = 1.3;
-            calcularCuota(monto, cuota, interes);
-            break;
-        }
-                    
-        case 6:
-        case 7:
-        case 8:{
-            let interes = 1.25;
-            calcularCuota(monto, cuota, interes)
-            break;
-        }
-            
-        case 9:
-        case 10:
-        case 11:{
-            let interes = 1.2;
-            calcularCuota(monto, cuota, interes)
-            break;
-        }
-            
-        case 12:{
-            let interes = 1.15;
-            calcularCuota(monto, cuota, interes)
-            break;
-        }
-                
-        default:
-            alert("Ingresar un número valido de cuotas.")
-    }
-
-} while (cuota < 3 || cuota > 12);
-confirm("Muchas gracias por confiar en nosotros.")
