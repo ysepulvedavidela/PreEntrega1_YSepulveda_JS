@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1, 
+        "nombre": "Videojuego", 
+        "precio": 15000, 
+        "img": "https://i.postimg.cc/3x94ZdfY/videojuego.png"
+    },
+    {
+        "id": 2, 
+        "nombre": "Mando", 
+        "precio": 40000, 
+        "img": "https://i.postimg.cc/fTn9W40n/mando.png"
+    },
+    {
+        "id": 3, 
+        "nombre": "Funko pop", 
+        "precio": 10000, 
+        "img": "https://i.postimg.cc/BbDP5pkV/funko.png"
+    },
+    {
+        "id": 4, 
+        "nombre": "Mouse", 
+        "precio": 20000, 
+        "img": "https://i.postimg.cc/pXfnp0D9/mouse.png"
+    },
+    {
+        "id": 5, 
+        "nombre": "Teclado", 
+        "precio": 15000, 
+        "img": "https://i.postimg.cc/NjQ2T14d/teclado.png"
+    }
+]
