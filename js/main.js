@@ -120,6 +120,21 @@ const mostrarCarrito = () => {
   totalBuying.className = "total-content";
   totalBuying.innerHTML = `Total: $${total.toLocaleString('es-CL')}`;
   modalContainer.append(totalBuying);
+
+  const vaciarCarrito = document.createElement("div");
+  vaciarCarrito.className = "modal-footer-button-1";
+  vaciarCarrito.innerHTML = `<button class="vaciarCarrito">Vaciar Carrito</button>`;
+  modalContainer.append(vaciarCarrito);
+
+  const totalPay = document.createElement("div");
+  totalPay.className = "modal-footer-button-2";
+  totalPay.innerHTML = `<button class="totalPaybutton">Pagar</button>`;
+  modalContainer.append(totalPay);
+
+  botonComprar.addEventListener("click", totalPaybutton);
+  function totalPaybutton() {
+    Swal.fire('Any fool can use a computer')
+  }
 };
 
 verCarrito.addEventListener("click", mostrarCarrito);
