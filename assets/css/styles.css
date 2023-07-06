@@ -19,7 +19,6 @@
   }
   
   .col-left {
-    border: 3px solid purple;
     text-align: left;
     justify-content: center;
     display: flex;
@@ -30,7 +29,6 @@
   }
   
   .col-middle {
-    border: 3px solid purple;
     text-align: center;
     justify-content: center;
   }
@@ -41,7 +39,6 @@
   }
   
   .col-right {
-    border: 3px solid purple;
     text-align: right;
     justify-content: center;
   }
@@ -54,17 +51,11 @@
   }
   
   .fa-cart-shopping {
-    border: 3px solid purple;
     justify-content: center;
     margin-top: 4rem;
   }
   
-  .cantidad-carrito {
-    border: 3px solid purple;
-  }
-  
   .sections {
-    border: 3px solid red;
     text-align: center;
   }
   
@@ -72,15 +63,12 @@
     background-size: cover;
     background-position: center;
     height: 20vh;
-    background-color: grey;
-    border: 3px solid red;
   }
   
   .banner-container {
     display: flex;
     justify-content: center;
     padding-top: 25px;
-    border: 3px solid blue;
   }
   
   .banner h1 {
@@ -90,7 +78,6 @@
     font-weight: bold;
     display: flex;
     justify-content: center;
-    border: 3px solid green;
   }
   
   .banner p {
@@ -103,7 +90,6 @@
   .shop-content {
     display: flex;
     justify-content: center;
-    border: 3px solid green;
   }
   
   .card {
@@ -167,12 +153,10 @@
     background-color: #0a0909;
     color: #fff;
     width: 100%;
-    border: 2px solid blue;
   }
   
   .modal-header-title {
     justify-self: start;
-    border: 2px solid blue;
   }
   
   .cerrar {
