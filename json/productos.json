@@ -1,15 +1,16 @@
 [
     {
         "id": 1, 
-        "nombre": "Videojuego", 
+        "nombre": "Videojuego",
         "precio": 15000, 
         "img": "https://i.postimg.cc/3x94ZdfY/videojuego.png"
     },
     {
         "id": 2, 
-        "nombre": "Mando", 
+        "nombre": "Mando",
         "precio": 40000, 
         "img": "https://i.postimg.cc/fTn9W40n/mando.png"
+        
     },
     {
         "id": 3, 
