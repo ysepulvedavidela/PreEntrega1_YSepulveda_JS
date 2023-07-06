@@ -120,10 +120,6 @@ const mostrarCarrito = () => {
   totalBuying.className = "total-content";
   totalBuying.innerHTML = `Total: $${total.toLocaleString('es-CL')}`;
   modalContainer.append(totalBuying);
-
-  const modalbuttonpay = document.createElement("div");
-  modalbuttonpay.innerHTML = '<div class="cerrar">Holaaaa</div>';
-  modalbuttonpay.className = "modal-header-button";
 };
 
 verCarrito.addEventListener("click", mostrarCarrito);

@@ -1,33 +1,37 @@
 [
     {
         "id": 1, 
-        "nombre": "Videojuego",
+        "nombre": "Videojuego", 
         "precio": 15000, 
-        "img": "https://i.postimg.cc/3x94ZdfY/videojuego.png"
+        "img": "https://i.postimg.cc/3x94ZdfY/videojuego.png",
+        "cantidad": 1
     },
     {
         "id": 2, 
-        "nombre": "Mando",
+        "nombre": "Mando", 
         "precio": 40000, 
-        "img": "https://i.postimg.cc/fTn9W40n/mando.png"
-        
+        "img": "https://i.postimg.cc/fTn9W40n/mando.png",
+        "cantidad": 1
     },
     {
         "id": 3, 
         "nombre": "Funko pop", 
         "precio": 10000, 
-        "img": "https://i.postimg.cc/BbDP5pkV/funko.png"
+        "img": "https://i.postimg.cc/BbDP5pkV/funko.png",
+        "cantidad": 1
     },
     {
         "id": 4, 
         "nombre": "Mouse", 
         "precio": 20000, 
-        "img": "https://i.postimg.cc/pXfnp0D9/mouse.png"
+        "img": "https://i.postimg.cc/pXfnp0D9/mouse.png",
+        "cantidad": 1
     },
     {
         "id": 5, 
         "nombre": "Teclado", 
         "precio": 15000, 
-        "img": "https://i.postimg.cc/NjQ2T14d/teclado.png"
+        "img": "https://i.postimg.cc/NjQ2T14d/teclado.png",
+        "cantidad": 1
     }
 ]
